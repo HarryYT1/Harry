@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry'nin Profili</title>
+    <style>
+        /* Temel Stil Ayarları */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Video Arka Plan Stili */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-background iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+
+        /* İçerik Kutusu Stili */
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Profil Fotoğrafı Stili */
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #00ffcc;
+        }
+
+        /* Başlık Stili */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        /* Link Stili */
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: #00ffcc;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50%;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        .links a:hover {
+            background-color: #00cc99;
+        }
+
+        /* Simgeler için Font Awesome */
+        .links a i {
+            font-size: 20px;
+        }
+
+        .click{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.92);
+            width: 100%;
+            height: 100%;
+            z-index: 9;
+        }
+
+        .click h1{
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            text-shadow: none;
+        }
+    </style>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="click">
+        <h1>click to enter...</h1>
+    </div>
+
+    <!-- Video Arka Plan -->
+    <div class="video-background">
+        <video class="video" src="m4_video.mp4" loop></video>
+    </div>
+
+    <!-- İçerik Kutusu -->
+    <div class="container">
+        <!-- Profil Fotoğrafı -->
+        <img src="https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/121996948/mczx2peAsT7tGRVW.jpg?Expires=1745517081&Signature=wGy6q4AsZJCXFZtZrH3i929okn4EOXtRM7fApMW65axn6d9AP4EzHuvJI9iMi9n6IVD1M7kGpLgCpbFVj0geGJ48ZKrZaCE2qaFNcrta9LUB~OU1LCaUyYe-F4KKRCp5TEOMk4e0k9seio6OV~vUF6UpW4bg8nPTccDvcIJmGpcpK9YBc0IXmPpx7WT8cePNN6mD3Qp4yolWRT5yU4C2d~Kx9YIGAnrfS85MbsXvgzM9c5nOhfX~zQrUwfCg~uktiFXBfRqs-~v3jAZiNbnWB3L1q1NEhTpKHlCnNLTBbQy~bDezr2vyTG0~ny41v~z2JSPs3879kTZGxtPMijwHwA__&Key-Pair-Id=K3USGZIKWMDCSX" alt="Profil Fotoğrafı" class="profile-photo">
+        <h1>Harry</h1>
+        <!-- Linkler -->
+        <div class="links">
+            <a href="https://open.spotify.com/playlist/03zzIFImbuRbIoarttupZv?si=fa46c668ea7c4c25" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="https://steamcommunity.com/profiles/76561199489943730/" target="_blank"><i class="fab fa-steam"></i></a>
+            <a href="https://discord.gg/TWyvhAm9" target="_blank"><i class="fab fa-discord"></i></a>
+        </div>
+    </div>
+
+    <script>
+        var click = document.querySelector(".click");
+        var video = document.querySelector(".video");
+
+        click.addEventListener("click", ()=>{
+            click.style.display = "none";
+            video.play()
+        });
+    </script>
+</body>
+</html> 
